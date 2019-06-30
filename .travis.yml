@@ -1,0 +1,44 @@
+language: python
+cache: pip
+dist: xenial
+
+jobs:
+  include:
+    #########
+    # Style #
+    #########
+    - stage: Style Checking
+      python: "3.7"
+      install:
+        - pip install black
+      script:
+        - black . --check
+
+    ############
+    # Building #
+    ############
+    # 3.6 #
+    - stage: Building
+      python: "3.6"
+      install:
+        - pip install -r requirements.txt
+        - pip install -r dev.requirements.txt
+      script:
+        - python manage.py --help
+    # 3.7 #
+    - stage: Building
+      python: "3.7"
+      install:
+        - pip install -r requirements.txt
+        - pip install -r dev.requirements.txt
+      script:
+        - python manage.py --help
+    # Latest #
+    - stage: Building
+      python: "3.7"
+      install:
+        - pip install -r requirements.txt
+        - pip install -r dev.requirements.txt
+        - pip install django --upgrade
+      script:
+        - python manage.py --help

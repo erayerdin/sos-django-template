@@ -1,1 +1,2 @@
 djangorestframework
+django>2.2
