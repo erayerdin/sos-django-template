@@ -19,6 +19,7 @@ including a couple more packages to install.
 - [Environment](#Environment)
 - [Architecture and Design Choices](#ArchitectureandDesignChoices)
   - [Settings](#Settings)
+  - [Celery](#Celery)
   - [Fixtures](#Fixtures)
 - [Notes](#Notes)
 
@@ -58,6 +59,7 @@ This template requires:
 
 This template includes:
 
+- [Celery](https://docs.celeryproject.org/en/latest/) for scheduled and asyncronous tasks
 - [Django Rest Framework](http://django-rest-framework.org/) for REST applications and building AJAX-based applications
 - [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
 - [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
@@ -104,6 +106,17 @@ defaults
     ├── development
     └── production
 ```
+
+### <a name='Celery'></a>Celery
+
+The template includes Celery and `project` is configured
+to be ready to use Celery, but Celery configurations
+have not been defined. If you want to use Celery, you
+need to configure your message broker and results
+backend. [This article][django_celery_article] shows
+an example.
+
+[django_celery_article]: https://realpython.com/asynchronous-tasks-with-django-and-celery/
 
 ### <a name='Fixtures'></a>Fixtures
 
