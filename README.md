@@ -2,7 +2,7 @@
 
 ![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
-![Version](https://img.shields.io/badge/version-0.2.0-green.svg)
+![Version](https://img.shields.io/badge/version-0.2.1-green.svg)
 ![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
@@ -49,6 +49,26 @@ start your project:
 ```bash
 django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/master.zip
 ```
+
+The rest is pretty standard stuff, you would like
+to (i) create a virtual environment, (ii) activate it
+and (iii) install dependencies as so:
+
+```bash
+virtualenv .venv # (i)
+source .venv/bin/activate # (ii)
+pip install -r requirements.txt # (iii)
+pip install -r dev.requirements.txt # (iii)
+```
+
+You also might want to install pre-commit in order to
+check the style and sort the imports before committing.
+
+```bash
+pre-commit install
+```
+
+The first time might take a couple of minutes.
 
 ## <a name='Environment'></a>Environment
 
