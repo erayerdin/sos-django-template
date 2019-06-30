@@ -1,4 +1,4 @@
-<center><h1>SOS Django Template</h1></center>
+# SOS Django Template
 
 ![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
@@ -6,31 +6,29 @@
 ![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
-<center>
 SOS (Separation of Settings) Django Template is a Django
 template, hence the name, separates the settings into
 development and production environment. However, it does
 not only do separate settings, it creates an
 _opinionated_ starter environment for Django by
 including a couple more packages to install.
-</center>
 
 <!-- vscode-markdown-toc -->
 
-- 1. [How to Use](#HowtoUse)
-- 2. [Environment](#Environment)
-- 3. [Architecture and Design Choices](#ArchitectureandDesignChoices)
-     - 3.1. [Settings](#Settings)
-     - 3.2. [Fixtures](#Fixtures)
-- 4. [Notes](#Notes)
+- [How to Use](#HowtoUse)
+- [Environment](#Environment)
+- [Architecture and Design Choices](#ArchitectureandDesignChoices)
+  - [Settings](#Settings)
+  - [Fixtures](#Fixtures)
+- [Notes](#Notes)
 
 <!-- vscode-markdown-toc-config
-	numbering=true
+	numbering=false
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-## 1. <a name='HowtoUse'></a>How to Use
+## <a name='HowtoUse'></a>How to Use
 
 `django-admin startproject` command accepts `--template`
 flag. This template argument accepts a URL that points
@@ -51,7 +49,7 @@ start your project:
 django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/master.zip
 ```
 
-## 2. <a name='Environment'></a>Environment
+## <a name='Environment'></a>Environment
 
 This template requires:
 
@@ -67,14 +65,14 @@ This template includes:
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
 
-## 3. <a name='ArchitectureandDesignChoices'></a>Architecture and Design Choices
+## <a name='ArchitectureandDesignChoices'></a>Architecture and Design Choices
 
 SOS Django Template aims to provide a solid foundation
 with well-known packages for the solutions
 _targeting backend_. The file structure is slightly
 modified for better development.
 
-### 3.1. <a name='Settings'></a>Settings
+### <a name='Settings'></a>Settings
 
 SOS Django Template, hence its name, separates Django
 settings to development and production environments.
@@ -107,7 +105,7 @@ defaults
     └── production
 ```
 
-### 3.2. <a name='Fixtures'></a>Fixtures
+### <a name='Fixtures'></a>Fixtures
 
 You can define your pytest fixtures inside
 `project.fixtures` package. If you want to define your
@@ -121,7 +119,7 @@ from .auth import user_factory, token_factory
 # these are examples
 ```
 
-## 4. <a name='Notes'></a>Notes
+## <a name='Notes'></a>Notes
 
 - `black` and `isort` is not bound by a git hook, so
   you should either integrate these with your editor or
