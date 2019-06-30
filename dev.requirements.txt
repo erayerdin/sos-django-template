@@ -1,2 +1,4 @@
 pytest-django==3.5.1
 black
+django-debug-toolbar==2.0
+django-cors-headers==3.0.2

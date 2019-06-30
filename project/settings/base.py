@@ -2,8 +2,10 @@
 Contains settings for both development and production environment.
 """
 
-import os, warnings
+import os
+import warnings
 from textwrap import dedent
+
 from .defaults import *
 
 # Secret Key
