@@ -53,8 +53,8 @@ jobs:
         - pip install -r dev.requirements.txt
       script:
         - pytest
-          retVal=$?
-          if [ $retVal -eq 5 ]; then
+        - retVal=$?
+        - if [ $retVal -eq 5 ]; then
           exit 0
           else
           exit 1
