@@ -50,6 +50,26 @@ start your project:
 django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/master.zip
 ```
 
+The rest is pretty standard stuff, you would like
+to (i) create a virtual environment, (ii) activate it
+and (iii) install dependencies as so:
+
+```bash
+virtualenv .venv # (i)
+source .venv/bin/activate # (ii)
+pip install -r requirements.txt # (iii)
+pip install -r dev.requirements.txt # (iii)
+```
+
+You also might want to install pre-commit in order to
+check the style and sort the imports before committing.
+
+```bash
+pre-commit install
+```
+
+The first time might take a couple of minutes.
+
 ## <a name='Environment'></a>Environment
 
 This template requires:
