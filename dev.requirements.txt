@@ -1,1 +1,2 @@
 pytest-django==3.5.1
+black
