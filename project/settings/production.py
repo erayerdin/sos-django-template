@@ -1,3 +1,7 @@
+"""
+Contains settings for only production environment.
+"""
+
 import warnings
 
 from .base import *
