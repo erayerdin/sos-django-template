@@ -15,13 +15,14 @@ including a couple more packages to install.
 
 <!-- vscode-markdown-toc -->
 
-- [How to Use](#HowtoUse)
-- [Environment](#Environment)
-- [Architecture and Design Choices](#ArchitectureandDesignChoices)
-  - [Settings](#Settings)
-  - [Celery](#Celery)
-  - [Fixtures](#Fixtures)
-- [Notes](#Notes)
+- [SOS Django Template](#sos-django-template)
+  - [<a name='HowtoUse'></a>How to Use](#a-namehowtouseahow-to-use)
+  - [<a name='Environment'></a>Environment](#a-nameenvironmentaenvironment)
+  - [<a name='ArchitectureandDesignChoices'></a>Architecture and Design Choices](#a-namearchitectureanddesignchoicesaarchitecture-and-design-choices)
+    - [<a name='Settings'></a>Settings](#a-namesettingsasettings)
+    - [<a name='Celery'></a>Celery](#a-nameceleryacelery)
+    - [<a name='Fixtures'></a>Fixtures](#a-namefixturesafixtures)
+  - [<a name='Notes'></a>Notes](#a-namenotesanotes)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -154,6 +155,5 @@ from .auth import user_factory, token_factory
 
 ## <a name='Notes'></a>Notes
 
-- `black` and `isort` is not bound by a git hook, so
-  you should either integrate these with your editor or
-  your git hooks in your local repository.
+- `black` and `isort` is not bound by a git hook by default. You should
+  integrate them with `pre-commit install` at first install.
