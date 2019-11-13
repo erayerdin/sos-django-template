@@ -13,23 +13,7 @@ not only do separate settings, it creates an
 _opinionated_ starter environment for Django by
 including a couple more packages to install.
 
-<!-- vscode-markdown-toc -->
-
-- [How to Use](#HowtoUse)
-- [Environment](#Environment)
-- [Architecture and Design Choices](#ArchitectureandDesignChoices)
-  - [Settings](#Settings)
-  - [Celery](#Celery)
-  - [Fixtures](#Fixtures)
-- [Notes](#Notes)
-
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-## <a name='HowtoUse'></a>How to Use
+## How to Use
 
 `django-admin startproject` command accepts `--template`
 flag. This template argument accepts a URL that points
@@ -70,7 +54,7 @@ pre-commit install
 
 The first time might take a couple of minutes.
 
-## <a name='Environment'></a>Environment
+## Environment
 
 This template requires:
 
@@ -87,14 +71,14 @@ This template includes:
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
 
-## <a name='ArchitectureandDesignChoices'></a>Architecture and Design Choices
+## Architecture and Design Choices
 
 SOS Django Template aims to provide a solid foundation
 with well-known packages for the solutions
 _targeting backend_. The file structure is slightly
 modified for better development.
 
-### <a name='Settings'></a>Settings
+### Settings
 
 SOS Django Template, hence its name, separates Django
 settings to development and production environments.
@@ -127,7 +111,7 @@ defaults
     └── production
 ```
 
-### <a name='Celery'></a>Celery
+### Celery
 
 The template includes Celery and `project` is configured
 to be ready to use Celery, but Celery configurations
@@ -138,7 +122,7 @@ an example.
 
 [django_celery_article]: https://realpython.com/asynchronous-tasks-with-django-and-celery/
 
-### <a name='Fixtures'></a>Fixtures
+### Fixtures
 
 You can define your pytest fixtures inside
 `project.fixtures` package. If you want to define your
@@ -152,8 +136,7 @@ from .auth import user_factory, token_factory
 # these are examples
 ```
 
-## <a name='Notes'></a>Notes
+## Notes
 
-- `black` and `isort` is not bound by a git hook, so
-  you should either integrate these with your editor or
-  your git hooks in your local repository.
+- `black` and `isort` is not bound by a git hook by default. You should
+  integrate them with `pre-commit install` at first install.
