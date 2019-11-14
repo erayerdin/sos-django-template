@@ -2,7 +2,7 @@
 
 ![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
-![Version](https://img.shields.io/badge/version-0.2.2-green.svg)
+![Version](https://img.shields.io/badge/version-0.3.0-green.svg)
 ![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
@@ -11,7 +11,7 @@ template, hence the name, separates the settings into
 development and production environment. However, it does
 not only do separate settings, it creates an
 _opinionated_ starter environment for Django by
-including a couple more packages to install.
+including a couple more packages to install and more features.
 
 ## How to Use
 
@@ -135,6 +135,12 @@ you need to import that in `__init__.py`.
 from .auth import user_factory, token_factory
 # these are examples
 ```
+
+### EditorConfig
+
+This project also provides a `.editorconfig` file to instruct your editor or IDE
+and keep your files clean. Check [the file](.editorconfig) to see what files are
+affected by this.
 
 ## Notes
 
