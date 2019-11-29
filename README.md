@@ -2,7 +2,7 @@
 
 ![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
-![Version](https://img.shields.io/badge/version-0.3.0-green.svg)
+![Version](https://img.shields.io/badge/version-0.3.1-green.svg)
 ![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
