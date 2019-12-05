@@ -13,6 +13,10 @@ not only do separate settings, it creates an
 _opinionated_ starter environment for Django by
 including a couple more packages to install and more features.
 
+ > #### Warning
+ >
+ > If you would like to contribute, see "Notes" section below.
+
 ## How to Use
 
 `django-admin startproject` command accepts `--template`
@@ -146,3 +150,6 @@ affected by this.
 
 - `black` and `isort` is not bound by a git hook by default. You should
   integrate them with `pre-commit install` at first install.
+ - If you intend to contribute to the project, please **target
+ `development` environment**. `development` branch is supposed
+ to have the latest stuff.
