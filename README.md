@@ -77,7 +77,7 @@ Also, these with development in mind:
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
-- [ipython], which spawns when you `python3 manage.py shell`.
+- [ipython](https://ipython.org/), which spawns when you `python3 manage.py shell`.
 
 ## Architecture and Design Choices
 
