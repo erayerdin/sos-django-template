@@ -2,7 +2,7 @@
 
 ![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
-![Version](https://img.shields.io/badge/version-0.3.1-green.svg)
+![Version](https://img.shields.io/badge/version-0.4.0-green.svg)
 ![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
@@ -12,6 +12,10 @@ development and production environment. However, it does
 not only do separate settings, it creates an
 _opinionated_ starter environment for Django by
 including a couple more packages to install and more features.
+
+ > #### Warning
+ >
+ > If you would like to contribute, see "Notes" section below.
 
 ## How to Use
 
@@ -61,15 +65,21 @@ This template requires:
 - Minimum Python 3.6
 - Minimum Django 2.2
 
-This template includes:
+This template includes these with production in mind:
 
 - [Celery](https://docs.celeryproject.org/en/latest/) for scheduled and asyncronous tasks
 - [Django Rest Framework](http://django-rest-framework.org/) for REST applications and building AJAX-based applications
+
+Also, these with development in mind:
+
 - [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
 - [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
+- [Pytest PUDB](https://github.com/wronglink/pytest-pudb) is a tool that you can
+use to debug Django/Python on terminal with [pudb](https://github.com/inducer/pudb).
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
+- [ipython](https://ipython.org/), which spawns when you `python3 manage.py shell`.
 
 ## Architecture and Design Choices
 
@@ -146,3 +156,6 @@ affected by this.
 
 - `black` and `isort` is not bound by a git hook by default. You should
   integrate them with `pre-commit install` at first install.
+ - If you intend to contribute to the project, please **target
+ `development` environment**. `development` branch is supposed
+ to have the latest stuff.

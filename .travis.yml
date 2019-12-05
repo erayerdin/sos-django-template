@@ -21,24 +21,15 @@ jobs:
     - stage: Building
       python: "3.6"
       install:
-        - pip install -r requirements.txt
-        - pip install -r dev.requirements.txt
+        - pip install -r requirements.txt --upgrade
+        - pip install -r dev.requirements.txt --upgrade
       script:
         - python manage.py --help
     # 3.7 #
     - stage: Building
       python: "3.7"
       install:
-        - pip install -r requirements.txt
-        - pip install -r dev.requirements.txt
-      script:
-        - python manage.py --help
-    # Latest #
-    - stage: Building
-      python: "3.7"
-      install:
-        - pip install -r requirements.txt
-        - pip install -r dev.requirements.txt
-        - pip install django --upgrade
+        - pip install -r requirements.txt --upgrade
+        - pip install -r dev.requirements.txt --upgrade
       script:
         - python manage.py --help
