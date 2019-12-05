@@ -65,15 +65,19 @@ This template requires:
 - Minimum Python 3.6
 - Minimum Django 2.2
 
-This template includes:
+This template includes these with production in mind:
 
 - [Celery](https://docs.celeryproject.org/en/latest/) for scheduled and asyncronous tasks
 - [Django Rest Framework](http://django-rest-framework.org/) for REST applications and building AJAX-based applications
+
+Also, these with development in mind:
+
 - [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
 - [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
+- [ipython], which spawns when you `python3 manage.py shell`.
 
 ## Architecture and Design Choices
 
