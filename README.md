@@ -75,6 +75,8 @@ Also, these with development in mind:
 - [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
 - [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
+- [Pytest PUDB](https://github.com/wronglink/pytest-pudb) is a tool that you can
+use to debug Django/Python on terminal with [pudb](https://github.com/inducer/pudb).
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
 - [ipython](https://ipython.org/), which spawns when you `python3 manage.py shell`.
