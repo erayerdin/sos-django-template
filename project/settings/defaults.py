@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+
 from environs import Env
 
 env = Env()
@@ -84,7 +85,7 @@ DATABASES = {
         "USER": env.str("DJANGO_DB_USER", default="postgres"),
         "PASSWORD": env.str("DJANGO_DB_PASSWORD", default="nopassword"),
         "HOST": env.str("DJANGO_DB_HOST", default="127.0.0.1"),
-        "PORT": str(env.int("DJANGO_DB_PORT", default=5432))
+        "PORT": str(env.int("DJANGO_DB_PORT", default=5432)),
     }
 }
 
