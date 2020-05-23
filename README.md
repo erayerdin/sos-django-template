@@ -49,6 +49,10 @@ pip install -r requirements.txt # (iii)
 pip install -r dev.requirements.txt # (iii)
 ```
 
+After doing these steps, you better check `.env.example` file on the project
+root. You have to copy/move/rename it as `.env` and **set `DJANGO_SECRET_KEY`
+environment variable before running Django** or *Django will not run*.
+
 You also might want to install pre-commit in order to
 check the style and sort the imports before committing.
 
