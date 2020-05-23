@@ -24,6 +24,9 @@ indent_size = 2
 indent_size = 2
 insert_final_newline = ignore
 
+[*.yaml]
+indent_size = 2
+
 # Minified JavaScript files shouldn't be changed
 [**.min.js]
 indent_style = ignore
