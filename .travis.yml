@@ -23,6 +23,7 @@ jobs:
       install:
         - pip install -r requirements.txt --upgrade
         - pip install -r dev.requirements.txt --upgrade
+        - echo "DJANGO_SECRET_KEY=1" > .env
       script:
         - python manage.py --help
     # 3.7 #
@@ -31,5 +32,6 @@ jobs:
       install:
         - pip install -r requirements.txt --upgrade
         - pip install -r dev.requirements.txt --upgrade
+        - echo "DJANGO_SECRET_KEY=1" > .env
       script:
         - python manage.py --help
