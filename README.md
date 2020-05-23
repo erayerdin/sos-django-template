@@ -130,6 +130,21 @@ SOS Django Template already assumes that you will use PostgreSQL. It installs
 and is preconfigured to work with PostgreSQL. Check your `.env.example` file
 in the project root to further configure your setup.
 
+# DotEnv
+
+[Due to twelve-factor app conventions](https://12factor.net/config), separating
+your configuration from application is considered to be a better practice.
+SOS Django Template comes batteries included to use `.env` files in your
+codebase and already has a `.env.example` file. You have to copy this file
+to your project root as `.env` for your project to run.
+
+After copying, you better review your config file to make some changes such as
+secret key and database settings.
+
+Under the hood, SOS Django Template uses [environs](https://github.com/sloria/environs#usage-with-django)
+to read your configurations. You probably would like to check their documentations
+out in order to create your extra configurations.
+
 ### Celery
 
 The template includes Celery and `project` is configured
