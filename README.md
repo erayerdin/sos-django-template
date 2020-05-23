@@ -125,6 +125,11 @@ defaults
     └── production
 ```
 
+### PostgreSQL
+SOS Django Template already assumes that you will use PostgreSQL. It installs
+and is preconfigured to work with PostgreSQL. Check your `.env.example` file
+in the project root to further configure your setup.
+
 ### Celery
 
 The template includes Celery and `project` is configured

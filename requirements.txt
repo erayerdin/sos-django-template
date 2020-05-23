@@ -2,3 +2,4 @@ django>2.2,<3
 djangorestframework
 celery
 environs[django]
+psycopg2==2.8.5
