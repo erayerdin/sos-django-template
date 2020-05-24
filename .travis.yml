@@ -13,6 +13,8 @@ jobs:
         - pip install black
       script:
         - black . --check
+        - isort
+        - flake8
 
     ############
     # Building #

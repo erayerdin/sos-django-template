@@ -20,6 +20,6 @@ repos:
     hooks:
       - id: isort
   -   repo: https://gitlab.com/pycqa/flake8
-      rev: master  # pick a git hash / tag to point to
+      rev: master
       hooks:
       -   id: flake8
