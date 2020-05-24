@@ -4,7 +4,7 @@ Contains settings for only production environment.
 
 import warnings
 
-from .base import *
+from .base import *  # noqa
 
 DEBUG = False
 
