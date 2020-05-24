@@ -2,7 +2,6 @@
 Contains settings for both development and production environment.
 """
 
-import warnings
 from .defaults import *
 
 # Rest Framework

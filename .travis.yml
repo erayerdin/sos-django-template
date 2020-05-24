@@ -10,9 +10,11 @@ jobs:
     - stage: Style Checking
       python: "3.7"
       install:
-        - pip install black
+        - pip install -r dev.requirements.txt
       script:
         - black . --check
+        - isort
+        - flake8
 
     ############
     # Building #
