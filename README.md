@@ -81,7 +81,7 @@ Also, these with development in mind:
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
 - [Pytest PUDB](https://github.com/wronglink/pytest-pudb) is a tool that you can
 use to debug Django/Python on terminal with [pudb](https://github.com/inducer/pudb).
-- [environs][https://github.com/sloria/environs] to load your `.env` variables
+- [environs](https://github.com/sloria/environs) to load your `.env` variables
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
 - [flake8](https://gitlab.com/pycqa/flake8) to lint your code
