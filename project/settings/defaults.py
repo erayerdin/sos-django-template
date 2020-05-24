@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+from environs import Env
+
+env = Env()
+env.read_env()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,10 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "#2*!-8!qhjh(-@p-yg0x-2xmw_f@%wv#t3b@6wh()lbhq4oud&"
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DJANGO_DEBUG", default=True)
 
 ALLOWED_HOSTS = []
 
@@ -75,8 +80,12 @@ WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": env.str("DJANGO_DB_ENGINE", default="django.db.backends.sqlite3"),
+        "NAME": env.str("DJANGO_DB_NAME", default=os.path.join(BASE_DIR, "db.sqlite3")),
+        "USER": env.str("DJANGO_DB_USER", default="postgres"),
+        "PASSWORD": env.str("DJANGO_DB_PASSWORD", default="nopassword"),
+        "HOST": env.str("DJANGO_DB_HOST", default="127.0.0.1"),
+        "PORT": str(env.int("DJANGO_DB_PORT", default=5432)),
     }
 }
 
@@ -97,15 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
-
-TIME_ZONE = "UTC"
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
+LANGUAGE_CODE = env.str("DJANGO_LANGUAGE_CODE", "en-us")
+TIME_ZONE = env.str("DJANGO_TIME_ZONE", "UTC")
+USE_I18N = env.bool("DJANGO_USE_I18N", True)
+USE_I18N = env.bool("DJANGO_USE_I18N", True)
+USE_TZ = env.bool("DJANGO_USE_TZ", True)
 
 
 # Static files (CSS, JavaScript, Images)

@@ -10,9 +10,11 @@ jobs:
     - stage: Style Checking
       python: "3.7"
       install:
-        - pip install black
+        - pip install -r dev.requirements.txt
       script:
         - black . --check
+        - isort
+        - flake8
 
     ############
     # Building #
@@ -23,6 +25,7 @@ jobs:
       install:
         - pip install -r requirements.txt --upgrade
         - pip install -r dev.requirements.txt --upgrade
+        - echo "DJANGO_SECRET_KEY=1" > .env
       script:
         - python manage.py --help
     # 3.7 #
@@ -31,5 +34,6 @@ jobs:
       install:
         - pip install -r requirements.txt --upgrade
         - pip install -r dev.requirements.txt --upgrade
+        - echo "DJANGO_SECRET_KEY=1" > .env
       script:
         - python manage.py --help

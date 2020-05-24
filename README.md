@@ -2,7 +2,7 @@
 
 ![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
-![Version](https://img.shields.io/badge/version-0.4.0-green.svg)
+![Version](https://img.shields.io/badge/version-0.5.0-green.svg)
 ![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
@@ -48,6 +48,10 @@ source .venv/bin/activate # (ii)
 pip install -r requirements.txt # (iii)
 pip install -r dev.requirements.txt # (iii)
 ```
+
+After doing these steps, you better check `.env.example` file on the project
+root. You have to copy/move/rename it as `.env` and **set `DJANGO_SECRET_KEY`
+environment variable before running Django** or *Django will not run*.
 
 You also might want to install pre-commit in order to
 check the style and sort the imports before committing.
@@ -120,6 +124,26 @@ defaults
     ├── development
     └── production
 ```
+
+### PostgreSQL
+SOS Django Template already assumes that you will use PostgreSQL. It installs
+and is preconfigured to work with PostgreSQL. Check your `.env.example` file
+in the project root to further configure your setup.
+
+# DotEnv
+
+[Due to twelve-factor app conventions](https://12factor.net/config), separating
+your configuration from application is considered to be a better practice.
+SOS Django Template comes batteries included to use `.env` files in your
+codebase and already has a `.env.example` file. You have to copy this file
+to your project root as `.env` for your project to run.
+
+After copying, you better review your config file to make some changes such as
+secret key and database settings.
+
+Under the hood, SOS Django Template uses [environs](https://github.com/sloria/environs#usage-with-django)
+to read your configurations. You probably would like to check their documentations
+out in order to create your extra configurations.
 
 ### Celery
 

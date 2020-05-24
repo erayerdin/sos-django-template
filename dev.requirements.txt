@@ -5,3 +5,6 @@ django-cors-headers==3.0.2
 pre-commit==1.17.0
 ipython>=7.10.1,<8
 pytest-pudb==0.7.0
+flake8==3.8.2
+flake8-django==1.0.0
+isort==4.3.21
