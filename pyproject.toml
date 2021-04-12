@@ -12,6 +12,7 @@ djangorestframework = "^3.12.4"
 celery = "^5.0.5"
 environs = {extras = ["django"], version = "^9.3.2"}
 psycopg2 = "^2.8.6"
+django-extensions = "^3.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest-django = "^4.2.0"

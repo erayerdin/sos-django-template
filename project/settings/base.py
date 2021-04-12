@@ -4,6 +4,9 @@ Contains settings for both development and production environment.
 
 from .defaults import *
 
+# Django Extensions
+INSTALLED_APPS.append("django_extensions")
+
 # Rest Framework
 INSTALLED_APPS.append("rest_framework")
 
