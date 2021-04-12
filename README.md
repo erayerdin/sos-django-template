@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
 ![Version](https://img.shields.io/badge/version-0.5.2-green.svg)
-![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
+![Python Version](https://img.shields.io/badge/-python%203.7%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
 SOS (Separation of Settings) Django Template is a Django
@@ -65,7 +65,7 @@ The first time might take a couple of minutes.
 
 This template requires:
 
-- Minimum Python 3.6
+- Minimum Python 3.7
 - Minimum Django 2.2
 
 This template includes these with production in mind:
