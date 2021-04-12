@@ -7,6 +7,9 @@ from .defaults import *
 # Rest Framework
 INSTALLED_APPS.append("rest_framework")
 
+# Core App
+INSTALLED_APPS.append("core")
+
 # Celery
 # TODO celery config
 # You can add your own configuration for Celery here.
