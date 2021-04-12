@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "sos-django-template"
+version = "0.6.0"
+description = ""
+authors = ["Eray Erdin <eraygezer.94@gmail.com>"]
+license = "WTFPL"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+django = "^2.2"
+djangorestframework = "^3.12.4"
+celery = "^5.0.5"
+environs = {extras = ["django"], version = "^9.3.2"}
+psycopg2 = "^2.8.6"
+
+[tool.poetry.dev-dependencies]
+pytest-django = "^4.2.0"
+black = "^20.8b1"
+django-debug-toolbar = "^3.2"
+django-cors-headers = "^3.7.0"
+pre-commit = "^2.12.0"
+ipython = "^7.22.0"
+pytest-pudb = "^0.7.0"
+flake8 = "^3.9.0"
+flake8-django = "^1.1.1"
+isort = "^5.8.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
