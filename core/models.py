@@ -6,3 +6,10 @@ class TimestampModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+class ExtendedTimestampModel(TimestampModel):
+    last_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
