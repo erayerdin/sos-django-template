@@ -75,6 +75,7 @@ This template includes these with production in mind:
 
 Also, these with development in mind:
 
+- [Poetry](https://python-poetry.org/), which is a great dependency management solution rather than manually specifying dependencies on separate files.
 - [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
 - [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
