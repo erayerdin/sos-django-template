@@ -149,5 +149,6 @@ This project also provides a `.editorconfig` file to instruct your editor or IDE
 
 ## Notes
 
-- `black` and `isort` is not bound by a git hook by default. You should integrate them with `pre-commit install` at first install.
+ - `black` and `isort` is not bound by a git hook by default. You should integrate them with `pre-commit install` at first install.
  - If you intend to contribute to the project, please **target `development` environment**. `development` branch is supposed to have the latest stuff.
+ - By default, this template ignores `poetry.lock` file. [You should change this behavior](https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control) by removing `poetry.lock` line in [.gitignore file](.gitignore).
