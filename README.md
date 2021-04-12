@@ -74,6 +74,7 @@ This template requires:
 
 - Minimum Python 3.7
 - Minimum Django 2.2
+- Poetry
 
 This template includes these with production in mind:
 
