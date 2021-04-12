@@ -9,6 +9,7 @@ INSTALLED_APPS.append("rest_framework")
 
 # Core App
 INSTALLED_APPS.append("core")
+AUTH_USER_MODEL = "core.CoreUser"
 
 # Celery
 # TODO celery config
