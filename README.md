@@ -11,6 +11,35 @@ SOS (Separation of Settings) Django Template is a Django template, hence the nam
  >
  > If you would like to contribute, see "Notes" section below.
 
+## Environment
+
+This template requires:
+
+- Minimum Python 3.7
+- Minimum Django 2.2
+- Poetry
+
+The production and development Python requirements are defined in `pyproject.toml` file. The system requirements are defined in `<SYSTEM_NAME>.requirements.txt` files (currently, we only have requirements for Ubuntu).
+
+This template includes these with production environment in mind:
+
+- [Celery](https://docs.celeryproject.org/en/latest/) for scheduled and asyncronous tasks
+- [Django Rest Framework](http://django-rest-framework.org/) for REST applications and building AJAX-based applications
+
+Also, these with development in mind:
+
+- [Poetry](https://python-poetry.org/), which is a great dependency management and isolation solution rather than manually specifying dependencies on separate files.
+- [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
+- [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
+- [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
+- [Pytest PUDB](https://github.com/wronglink/pytest-pudb) is a tool that you can
+use to debug Django/Python on terminal with [pudb](https://github.com/inducer/pudb).
+- [environs](https://github.com/sloria/environs) to load your `.env` variables
+- [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
+- [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
+- [flake8](https://gitlab.com/pycqa/flake8) to lint your code
+- [ipython](https://ipython.org/), which spawns when you `python3 manage.py shell`.
+
 ## How to Use
 
 `django-admin startproject` command accepts `--template` flag. This template argument accepts a URL that points to a zip file.
@@ -55,33 +84,6 @@ pre-commit install
 ```
 
 The first time for pre-commit to install might take a  couple of minutes.
-
-## Environment
-
-This template requires:
-
-- Minimum Python 3.7
-- Minimum Django 2.2
-- Poetry
-
-This template includes these with production in mind:
-
-- [Celery](https://docs.celeryproject.org/en/latest/) for scheduled and asyncronous tasks
-- [Django Rest Framework](http://django-rest-framework.org/) for REST applications and building AJAX-based applications
-
-Also, these with development in mind:
-
-- [Poetry](https://python-poetry.org/), which is a great dependency management solution rather than manually specifying dependencies on separate files.
-- [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
-- [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
-- [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
-- [Pytest PUDB](https://github.com/wronglink/pytest-pudb) is a tool that you can
-use to debug Django/Python on terminal with [pudb](https://github.com/inducer/pudb).
-- [environs](https://github.com/sloria/environs) to load your `.env` variables
-- [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
-- [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
-- [flake8](https://gitlab.com/pycqa/flake8) to lint your code
-- [ipython](https://ipython.org/), which spawns when you `python3 manage.py shell`.
 
 ## Architecture and Design Choices
 
