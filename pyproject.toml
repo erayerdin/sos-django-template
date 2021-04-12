@@ -6,7 +6,7 @@ authors = ["Eray Erdin <eraygezer.94@gmail.com>"]
 license = "WTFPL"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 django = "^2.2"
 djangorestframework = "^3.12.4"
 celery = "^5.0.5"
