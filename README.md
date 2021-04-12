@@ -1,6 +1,5 @@
 # SOS Django Template
 
-![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
 ![Version](https://img.shields.io/badge/version-0.5.2-green.svg)
 ![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
