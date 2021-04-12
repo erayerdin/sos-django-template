@@ -1,34 +1,81 @@
 # SOS Django Template
 
+![Travis (.com)](https://img.shields.io/travis/com/erayerdin/sos-django-template/master.svg)
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
 ![Version](https://img.shields.io/badge/version-0.5.2-green.svg)
-![Python Version](https://img.shields.io/badge/-python%203.7%2B-blue.svg)
+![Python Version](https://img.shields.io/badge/-python%203.6%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
-SOS (Separation of Settings) Django Template is a Django template, hence the name, separates the settings into development and production environment. However, it does not only do separate settings, it creates an _opinionated_ starter environment for Django by including a couple more packages to install and more features.
+SOS (Separation of Settings) Django Template is a Django
+template, hence the name, separates the settings into
+development and production environment. However, it does
+not only do separate settings, it creates an
+_opinionated_ starter environment for Django by
+including a couple more packages to install and more features.
 
  > #### Warning
  >
  > If you would like to contribute, see "Notes" section below.
 
+## How to Use
+
+`django-admin startproject` command accepts `--template`
+flag. This template argument accepts a URL that points
+to a zip file.
+
+The `master` branch of this repository is considered to
+be stable. So, adding `archive/master.zip` to the URL of
+this repo should be enough, see below:
+
+```
+https://github.com/erayerdin/sos-django-template/archive/master.zip
+```
+
+So, now you can use this URL with `django-admin` to
+start your project:
+
+```bash
+django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/master.zip
+```
+
+The rest is pretty standard stuff, you would like
+to (i) create a virtual environment, (ii) activate it
+and (iii) install dependencies as so:
+
+```bash
+virtualenv .venv # (i)
+source .venv/bin/activate # (ii)
+pip install -r requirements.txt # (iii)
+pip install -r dev.requirements.txt # (iii)
+```
+
+After doing these steps, you better check `.env.example` file on the project
+root. You have to copy/move/rename it as `.env` and **set `DJANGO_SECRET_KEY`
+environment variable before running Django** or *Django will not run*.
+
+You also might want to install pre-commit in order to
+check the style and sort the imports before committing.
+
+```bash
+pre-commit install
+```
+
+The first time might take a couple of minutes.
+
 ## Environment
 
 This template requires:
 
-- Minimum Python 3.7
+- Minimum Python 3.6
 - Minimum Django 2.2
-- Poetry
 
-The production and development Python requirements are defined in `pyproject.toml` file. The system requirements are defined in `<SYSTEM_NAME>.requirements.txt` files (currently, we only have requirements for Ubuntu).
-
-This template includes these with production environment in mind:
+This template includes these with production in mind:
 
 - [Celery](https://docs.celeryproject.org/en/latest/) for scheduled and asyncronous tasks
 - [Django Rest Framework](http://django-rest-framework.org/) for REST applications and building AJAX-based applications
 
 Also, these with development in mind:
 
-- [Poetry](https://python-poetry.org/), which is a great dependency management and isolation solution rather than manually specifying dependencies on separate files.
 - [Django Debug Tooolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#getting-the-code), which is a handy tool that provides information about template generation, query building etc.
 - [Django CORS Headers](https://github.com/ottoyiu/django-cors-headers), which allows CORS requests in only development environment and overcomes the pain of CORS errors during development
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
@@ -40,60 +87,21 @@ use to debug Django/Python on terminal with [pudb](https://github.com/inducer/pu
 - [flake8](https://gitlab.com/pycqa/flake8) to lint your code
 - [ipython](https://ipython.org/), which spawns when you `python3 manage.py shell`.
 
-## How to Use
-
-`django-admin startproject` command accepts `--template` flag. This template argument accepts a URL that points to a zip file.
-
-The `master` branch of this repository is considered to be stable. So, adding `archive/master.zip` to the URL of this repo should be enough, see below:
-
-```
-https://github.com/erayerdin/sos-django-template/archive/master.zip
-```
-
-So, now you can use this URL with `django-admin` to start your project:
-
-```bash
-django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/master.zip
-```
-
-You can also view [releases](https://github.com/erayerdin/sos-django-template/releases) and select specific one to install. To install a specific version, you can:
-
-```bash
-django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/refs/tags/<VERSION_HERE>.zip
-```
-
-After `cd`'ing into project directory, the first thing you need to do is to install platform-specific dependencies on your system. Currently, only Ubuntu dependencies are provided. PRs are welcome if you'd like to specify dependencies for other platforms. To install platform-specific dependencies:
-
-```bash
-sudo apt install $(cat ubuntu.requirements.txt)
-```
-
-After this, you can launch poetry shell and install dependencies:
-
-```bash
-poetry shell
-poetry install
-```
-
-After doing these steps, you better check `.env.example`  file on the project root. You have to copy/move/rename it  as `.env` and **set `DJANGO_SECRET_KEY` environment  variable before running Django** or *Django will not run*.
-
-You also might want to install pre-commit in order to check the style and sort the imports before committing.
-
-```bash
-pre-commit install
-```
-
-The first time for pre-commit to install might take a  couple of minutes.
-
 ## Architecture and Design Choices
 
-SOS Django Template aims to provide a solid foundation with well-known packages for the solutions _targeting backend_. The file structure is slightly modified for better development.
+SOS Django Template aims to provide a solid foundation
+with well-known packages for the solutions
+_targeting backend_. The file structure is slightly
+modified for better development.
 
 ### Settings
 
-SOS Django Template, hence its name, separates Django settings to development and production environments.
+SOS Django Template, hence its name, separates Django
+settings to development and production environments.
 
-All settings are located in `project.settings` as a package and this package contains three separate modules:
+All settings are located in `project.settings` as
+a package and this package contains three separate
+modules:
 
 - **`project.settings.defaults` module:** This module
   contains _default_ settings that are generated with
@@ -104,7 +112,11 @@ All settings are located in `project.settings` as a package and this package con
 - **`project.settings.development` module**
 - **`project.settings.production` module**
 
-When the Django application is called within the terminal, it must point to either `development` or `production` module. By default, `manage.py` uses `development` module and `project/wsgi.py` uses `production` module.
+When the Django application is called within the
+terminal, it must point to either `development` or
+`production` module. By default, `manage.py` uses
+`development` module and `project/wsgi.py` uses
+`production` module.
 
 The overall import schema for settings are as below:
 
@@ -116,25 +128,42 @@ defaults
 ```
 
 ### PostgreSQL
-SOS Django Template already assumes that you will use PostgreSQL. It installs and is preconfigured to work with PostgreSQL. Check your `.env.example` file in the project root to further configure your setup.
+SOS Django Template already assumes that you will use PostgreSQL. It installs
+and is preconfigured to work with PostgreSQL. Check your `.env.example` file
+in the project root to further configure your setup.
 
 ### DotEnv
 
-[Due to twelve-factor app conventions](https://12factor.net/config), separating your configuration from application is considered to be a better practice. SOS Django Template comes batteries included to use `.env` files in your codebase and already has a `.env.example` file. You have to copy this file to your project root as `.env` for your project to run.
+[Due to twelve-factor app conventions](https://12factor.net/config), separating
+your configuration from application is considered to be a better practice.
+SOS Django Template comes batteries included to use `.env` files in your
+codebase and already has a `.env.example` file. You have to copy this file
+to your project root as `.env` for your project to run.
 
-After copying, you better review your config file to make some changes such as secret key and database settings.
+After copying, you better review your config file to make some changes such as
+secret key and database settings.
 
-Under the hood, SOS Django Template uses [environs](https://github.com/sloria/environs#usage-with-django) to read your configurations. You probably would like to check their documentations out in order to create your extra configurations.
+Under the hood, SOS Django Template uses [environs](https://github.com/sloria/environs#usage-with-django)
+to read your configurations. You probably would like to check their documentations
+out in order to create your extra configurations.
 
 ### Celery
 
-The template includes Celery and `project` is configured to be ready to use Celery, but Celery configurations have not been defined. If you want to use Celery, you need to configure your message broker and results backend. [This article][django_celery_article] shows an example.
+The template includes Celery and `project` is configured
+to be ready to use Celery, but Celery configurations
+have not been defined. If you want to use Celery, you
+need to configure your message broker and results
+backend. [This article][django_celery_article] shows
+an example.
 
 [django_celery_article]: https://realpython.com/asynchronous-tasks-with-django-and-celery/
 
 ### Fixtures
 
-You can define your pytest fixtures inside `project.fixtures` package. If you want to define your fixture in a separate module inside `fixtures`, then you need to import that in `__init__.py`.
+You can define your pytest fixtures inside
+`project.fixtures` package. If you want to define your
+fixture in a separate module inside `fixtures`, then
+you need to import that in `__init__.py`.
 
 ```python
 # project.fixtures
@@ -145,10 +174,14 @@ from .auth import user_factory, token_factory
 
 ### EditorConfig
 
-This project also provides a `.editorconfig` file to instruct your editor or IDE and keep your files clean. Check [the file](.editorconfig) to see what files are affected by this.
+This project also provides a `.editorconfig` file to instruct your editor or IDE
+and keep your files clean. Check [the file](.editorconfig) to see what files are
+affected by this.
 
 ## Notes
 
- - `black` and `isort` is not bound by a git hook by default. You should integrate them with `pre-commit install` at first install.
- - If you intend to contribute to the project, please **target `development` environment**. `development` branch is supposed to have the latest stuff.
- - By default, this template ignores `poetry.lock` file. [You should change this behavior](https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control) by removing `poetry.lock` line in [.gitignore file](.gitignore).
+- `black` and `isort` is not bound by a git hook by default. You should
+  integrate them with `pre-commit install` at first install.
+ - If you intend to contribute to the project, please **target
+ `development` environment**. `development` branch is supposed
+ to have the latest stuff.
