@@ -115,7 +115,44 @@ defaults
     └── production
 ```
 
+### Core App
+
+`core` app is a built-in custom app comes with this template. It includes various features such as:
+
+ - `TimestampModel` and `ExtendedTimestampModel` models in order to automatically define `created_at` and `last_update` fields in your model
+ - A custom `CoreUser` model
+
+#### Timestamp Models
+
+Laravel automatically injects object creation and update datetimes into the models. You have to specifically specify them in Django. However, this template has two different timestamp models called `TimestampModel` and `ExtendedTimestampModel`. You can use these models to inject these fields into your models automatically.
+
+`TimestampModel` only has `created_at` field whereas `ExtendedTimestampModel` has both `created_at` and `last_update` fields. In order to use them:
+
+```python
+from core.models import TimestampModel, ExtendedTimestampModel
+
+# ...
+
+class Foo(TimestampModel):
+  # ...
+
+class Bar(ExtendedTimestampModel):
+  # ...
+
+foo = Foo.objects.create()
+foo.created_at  # returns when it is created
+
+bar = Bar.objects.create()
+bar.created_at
+bar.last_update  # returns when it is last updated
+```
+
+#### Core User
+
+A custom user model *must be defined as early as possible*, that's why this template comes with built-in `CoreUser` model, which is the default user model. You can edit and add extra fields to `CoreUser` model on `core/models.py`.
+
 ### PostgreSQL
+
 SOS Django Template already assumes that you will use PostgreSQL. It installs and is preconfigured to work with PostgreSQL. Check your `.env.example` file in the project root to further configure your setup.
 
 ### DotEnv
