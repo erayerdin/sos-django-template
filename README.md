@@ -37,6 +37,13 @@ start your project:
 django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/master.zip
 ```
 
+You can also view [releases](https://github.com/erayerdin/sos-django-template/releases)
+and select specific one to install. To install a specific version, you can:
+
+```bash
+django-admin startproject yourProjectName --template https://github.com/erayerdin/sos-django-template/archive/refs/tags/<VERSION_HERE>.zip
+```
+
 The rest is pretty standard stuff, you would like
 to (i) create a virtual environment, (ii) activate it
 and (iii) install dependencies as so:
