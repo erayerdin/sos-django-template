@@ -1,1 +1,1 @@
-pytest_plugins = ("project.fixtures",)
+pytest_plugins = ("project.fixtures", "core.factories")

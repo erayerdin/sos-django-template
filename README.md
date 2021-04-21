@@ -34,6 +34,7 @@ Also, these with development in mind:
 - [Pytest Django](https://pytest-django.readthedocs.io/en/latest/), which integrates amazing [pytest](https://docs.pytest.org/en/latest/) testing framework with Django
 - [Pytest PUDB](https://github.com/wronglink/pytest-pudb) is a tool that you can
 use to debug Django/Python on terminal with [pudb](https://github.com/inducer/pudb).
+ - [Pytest Factoryboy](http://pytest-factoryboy.rtfd.io/) is a tool to create instances with ease and use it as pytest fixtures.
 - [environs](https://github.com/sloria/environs) to load your `.env` variables
 - [Black](https://black.readthedocs.io/en/stable/), which is a on-the-fly Python code formatter and linter
 - [Isort](https://isort.readthedocs.io/en/latest/), which sorts imports on-the-fly
@@ -171,14 +172,54 @@ The template includes Celery and `project` is configured to be ready to use Cele
 
 ### Fixtures
 
-You can define your pytest fixtures inside `project.fixtures` package. If you want to define your fixture in a separate module inside `fixtures`, then you need to import that in `__init__.py`.
+You can define your pytest fixtures inside `project.fixtures` package.
 
 ```python
-# project.fixtures
+import pytest
 
-from .auth import user_factory, token_factory
-# these are examples
+@pytest.fixture
+def token():
+    # some operations to generate token
 ```
+
+You can also separate your fixtures inside `project.fixtures` package, but you also need to import it in `__init__.py` in `project.fixtures` package. Assuming you have `project.fixtures.auth` module and the `token` fixture above put into it:
+
+```python
+# file: project/fixtures/auth.py
+import pytest
+
+@pytest.fixture
+def token():
+    # some operations to generate token
+
+# file: project/fixtures/__init__.py
+from .auth import *  # noqa
+
+# noqa comment will make your linter/formatter to not complain about the import
+```
+
+### Pytest Factoryboy
+
+[Pytest Factoryboy](https://github.com/pytest-dev/pytest-factoryboy) is a great way to create factories in your project, similar to [Laravel's factories](https://laravel.com/docs/master/database-testing). In order to create a factory, you need to have `factories.py` module in one of your apps. The built-in `core` module in SOS Django Template already has `CoreUserFactory` in `factories.py` module, [check it out](core/factories.py).
+
+Also make sure to add your `factories` module to `conftest.py`'s `pytest_plugins` array at the root of your project, [core module already has been added to it](conftest.py). In order to create a `CoreUser` instance, you can either (i) get a quick instance of it by simply using `core_user` fixture or (ii) use `core_user_factory` fixture to create custom or more than one author in a test. See the example below:
+
+```python
+def test_foo(core_user):
+    # test something with CoreUser instance
+
+def test_bar(core_user_factory):
+    # create a custom CoreUser
+    user = core_user_factory(username="johndoe")
+
+    # or create 10 users
+    for _ in range(10):
+        core_user_factory()
+
+    # and do some tests
+```
+
+Built-in `core_user` and `core_user_factory` fixtures are safe to use in multiple creations. `username` and `email` fields are automatically generated as `user{ORDER}` and `user{ORDER}@example.com`. Since factories are meant to be used in tests, the `password` field will always result in `111111`.
 
 ### EditorConfig
 
