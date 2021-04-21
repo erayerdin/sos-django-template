@@ -1,7 +1,7 @@
 # SOS Django Template
 
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg)
-![Version](https://img.shields.io/badge/version-0.5.2-green.svg)
+![Version](https://shields.io/github/v/release/erayerdin/sos-django-template)
 ![Python Version](https://img.shields.io/badge/-python%203.7%2B-blue.svg)
 ![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
 
