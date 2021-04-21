@@ -1,9 +1,9 @@
 # SOS Django Template
 
-![License](https://img.shields.io/badge/license-WTFPL-black.svg)
-![Version](https://shields.io/github/v/release/erayerdin/sos-django-template)
-![Python Version](https://img.shields.io/badge/-python%203.7%2B-blue.svg)
-![Django Version](https://img.shields.io/badge/-django%202.2%2B-0C4B33.svg)
+![License](https://img.shields.io/badge/license-WTFPL-black.svg?style=flat-square)
+![Version](https://shields.io/github/v/release/erayerdin/sos-django-template?style=flat-square)
+![Python Version](https://img.shields.io/badge/-3.7%2B-blue.svg?style=flat-square&logo=python&logoColor=white)
+![Django Version](https://img.shields.io/badge/-2.2%2B-0C4B33.svg?style=flat-square&logo=django&logoColor=white)
 
 SOS (Separation of Settings) Django Template is a Django template, hence the name, separates the settings into development and production environment. However, it does not only do separate settings, it creates an _opinionated_ starter environment for Django by including a couple more packages to install and more features.
 
