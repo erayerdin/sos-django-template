@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = env.str("DJANGO_LANGUAGE_CODE", "en-us")
 TIME_ZONE = env.str("DJANGO_TIME_ZONE", "UTC")
 USE_I18N = env.bool("DJANGO_USE_I18N", True)
-USE_I18N = env.bool("DJANGO_USE_I18N", True)
+USE_L10N = env.bool("DJANGO_USE_L10N", True)
 USE_TZ = env.bool("DJANGO_USE_TZ", True)
 
 
