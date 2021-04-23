@@ -66,7 +66,7 @@ django-admin startproject yourProjectName --template https://github.com/erayerdi
 After `cd`'ing into project directory, the first thing you need to do is to install platform-specific dependencies on your system. Currently, only Ubuntu dependencies are provided. PRs are welcome if you'd like to specify dependencies for other platforms. To install platform-specific dependencies:
 
 ```bash
-sudo apt install $(cat ubuntu.requirements.txt)
+bash ubuntu20.requirements.bash
 ```
 
 After this, you can launch poetry shell and install dependencies:
