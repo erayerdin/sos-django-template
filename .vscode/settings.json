@@ -5,7 +5,9 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/__pycache__": true
+        "**/__pycache__": true,
+        ".pytest_cache": true
     },
-    "explorerExclude.backup": null
+    "explorerExclude.backup": null,
+    "python.formatting.provider": "black"
 }

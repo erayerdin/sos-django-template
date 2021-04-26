@@ -22,9 +22,21 @@ django-cors-headers = "^3.7.0"
 pre-commit = "^2.12.0"
 ipython = "^7.22.0"
 pytest-pudb = "^0.7.0"
-flake8 = "^3.9.0"
 flake8-django = "^1.1.1"
 isort = "^5.8.0"
+pytest-factoryboy = "^2.1.0"
+pytest-cov = "^2.11.1"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE="project.settings.development"
+
+[tool.isort]
+known_third_party =["celery", "django", "environs", "factory", "pytest_factoryboy"]
+multi_line_output=3
+include_trailing_comma=true
+force_grid_wrap=0
+use_parentheses=true
+line_length=160
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
