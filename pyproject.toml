@@ -33,10 +33,7 @@ DJANGO_SETTINGS_MODULE="project.settings.development"
 [tool.isort]
 known_third_party =["celery", "django", "environs", "factory", "pytest_factoryboy"]
 multi_line_output=3
-include_trailing_comma=true
-force_grid_wrap=0
-use_parentheses=true
-line_length=160
+profile = "black"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
