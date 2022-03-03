@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/license-WTFPL-black.svg?style=flat-square)
 ![Version](https://shields.io/github/v/release/erayerdin/sos-django-template?style=flat-square)
 ![Python Version](https://img.shields.io/badge/-3.7%2B-blue.svg?style=flat-square&logo=python&logoColor=white)
-![Django Version](https://img.shields.io/badge/-2.2%2B-0C4B33.svg?style=flat-square&logo=django&logoColor=white)
+![Django Version](https://img.shields.io/badge/-3.2%2B-0C4B33.svg?style=flat-square&logo=django&logoColor=white)
 
 SOS Django Tempalate is a Django starter template that has opinionated and good solutions while starting your new Django project.
 
@@ -13,7 +13,7 @@ You can [refer to the documentation](https://github.com/erayerdin/sos-django-tem
 
 ## Environment
 
-SOS Django Template requires Python 3.7+, Django 2.2+ and [Poetry](https://python-poetry.org/) to be installed on your system.
+SOS Django Template requires Python 3.7+, Django 3.2+ and [Poetry](https://python-poetry.org/) to be installed on your system.
 
 This template separates production and development settings, which are under different `project.settings.development` and `project.settings production` modules.
 
