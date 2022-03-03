@@ -31,7 +31,7 @@ pytest-cov = "^3.0.0"
 DJANGO_SETTINGS_MODULE = "project.settings.development"
 
 [tool.isort]
-known_third_party = ["celery", "django", "environs", "factory", "pytest_factoryboy"]
+known_third_party = [
     "celery",
     "django",
     "environs",
