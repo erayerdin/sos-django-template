@@ -7,32 +7,38 @@ license = "WTFPL"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-django = "^2.2"
-djangorestframework = "^3.12.4"
-celery = "^5.0.5"
-environs = {extras = ["django"], version = "^9.3.2"}
-psycopg2 = "2.8.6"
-django-extensions = "^3.1.2"
+djangorestframework = "^3.13.1"
+celery = "^5.2.3"
+environs = { extras = ["django"], version = "^9.3.2" }
+psycopg2 = "^2.9.3"
+django-extensions = "^3.1.5"
+Django = "^3.2"
 
 [tool.poetry.dev-dependencies]
-pytest-django = "^4.2.0"
-black = "^20.8b1"
-django-debug-toolbar = "^3.2"
-django-cors-headers = "^3.7.0"
-pre-commit = "^2.12.0"
-ipython = "^7.22.0"
+pytest-django = "^4.5.2"
+black = "^22.1.0"
+django-debug-toolbar = "^3.2.4"
+django-cors-headers = "^3.11.0"
+pre-commit = "^2.17.0"
+ipython = "^7"
 pytest-pudb = "^0.7.0"
-flake8-django = "^1.1.1"
-isort = "^5.8.0"
+flake8-django = "^1.1.2"
+isort = "^5.10.1"
 pytest-factoryboy = "^2.1.0"
-pytest-cov = "^2.11.1"
+pytest-cov = "^3.0.0"
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE="project.settings.development"
+DJANGO_SETTINGS_MODULE = "project.settings.development"
 
 [tool.isort]
-known_third_party =["celery", "django", "environs", "factory", "pytest_factoryboy"]
-multi_line_output=3
+known_third_party = [
+    "celery",
+    "django",
+    "environs",
+    "factory",
+    "pytest_factoryboy",
+]
+multi_line_output = 3
 profile = "black"
 
 [build-system]
